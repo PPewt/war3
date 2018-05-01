@@ -1,0 +1,10 @@
+//! runtextmacro EventBefore("October","1915")
+    //Bulgaria gets Bulgaria
+    call KillDestructablesRect(gg_rct_Bulgaria)
+    call GivePlayerRect(BULGARIA,gg_rct_Bulgaria)
+    call GarrisonTrenchesRect(BULGARIA,gg_rct_BulgariaTrenches1)
+    call GarrisonTrenchesRect(BULGARIA,gg_rct_BulgariaTrenches2)
+    call DisplayTimedTextToPlayer(GetLocalPlayer(),0.,0.,20.,"|cffffcc00October 1915|r - Having recently lost a war with Serbia and sandwiched by the Ottoman Empire and Austria-Hungary, and with pro-German leanings, |cffffcc00Bulgaria declares war on the Entente Powers and joins the Central Powers.|r")
+    call SetPlayerState(BULGARIA,PLAYER_STATE_RESOURCE_GOLD,GetPlayerState(BULGARIA,PLAYER_STATE_RESOURCE_GOLD)+400)
+    call DisplayRect(SERBIA,gg_rct_Bulgaria)
+//! runtextmacro EventAfter()

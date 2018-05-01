@@ -1,0 +1,216 @@
+// Units for every unit that may need to be referenced by a script
+// (which is most of them)
+
+library Rawcodes requires Players
+globals
+    
+    //Arrays for player-specific units
+    integer array INFANTRY
+    integer array ARMOURED_CAR
+    integer array TRENCH
+    integer array FORTIFIED_TRENCH
+    
+    //Abilities
+    constant integer TOWN_INCOME_ABILITY    = 'S00C'
+    constant integer SEND_SENUSSI_REBELS    = 'A00P'
+    constant integer TORPEDO                = 'A01A'
+    constant integer CHANGE_TRANSPORT       = 'S00B'
+    
+    constant integer SEND_GOLD_TO_GREECE    = 'A00Z'
+    constant integer UNSEND_GOLD_TO_GREECE  = 'A01B'
+    
+    //Infantry
+    constant integer MEDIC                  = 'h01B'
+    constant integer CAVALRY                = 'h01I'
+    constant integer SPAHI                  = 'h02R'
+    constant integer MORTAR                 = 'h00W'
+    constant integer MACHINE_GUNNER         = 'h019'
+    constant integer MACHINE_GUNNER_ALT     = 'h01A'
+    
+    //Artillery
+    constant integer HOWITZER               = 'h00X'
+    constant integer HEAVY_HOWITZER         = 'h01Y'
+    constant integer GAS_HOWITZER           = 'h027'
+    constant integer HOWITZER_PACKED        = 'h00Y'
+    constant integer HEAVY_HOWITZER_PACKED  = 'h01X'
+    constant integer GAS_HOWITZER_PACKED    = 'h028'
+    
+    //Tanks
+    constant integer A7V                    = 'h01R'
+    constant integer A7V_CENTRALS           = 'h033'
+    constant integer A7V_ALT                = 'h02I'
+    constant integer A7V_CENTRALS_ALT       = 'h034'
+    constant integer FIAT                   = 'h035'
+    constant integer FIAT_ALT               = 'h036'
+    constant integer MARK_I                 = 'h01S'
+    constant integer MARK_IV                = 'h01U'
+    constant integer MARK_I_ALT             = 'h02Z'
+    constant integer MARK_IV_ALT            = 'h030'
+    constant integer RENAULT                = 'h01T'
+    constant integer RENAULT_AMERICAN       = 'h01V'
+    constant integer RENAULT_ALT            = 'h031'
+    constant integer RENAULT_AMERICAN_ALT   = 'h032'
+    
+    //Ships
+    constant integer SUBMARINE              = 'h02A'
+    constant integer UBOAT                  = 'h02C'
+    constant integer SUBMARINE_SUBMERGED    = 'h02B'
+    constant integer UBOAT_SUBMERGED        = 'h02D'
+    constant integer TORPEDO_BOAT           = 'h02E'
+    constant integer DESTROYER              = 'h01G'
+    constant integer CRUISER                = 'h01E'
+    constant integer DREADNOUGHT            = 'h01F'
+    constant integer TRANSPORT_SHIP         = 'h01C'
+    constant integer MERCHANT_SHIP          = 'h02G'
+    constant integer SUPPLY_SHIP            = 'h02Y'
+    
+    //Buildings
+    constant integer BARRACKS               = 'h00U'
+    constant integer FACTORY                = 'h00V'
+    constant integer RESEARCH_CENTRE        = 'h029'
+    constant integer SHIPYARD               = 'h01D'
+    constant integer TRADE_DOCKS            = 'h02F'
+    
+    //Fake Units
+    constant integer DUMMY                  = 'e000'
+    constant integer GAS_DUMMY              = 'e001'
+    
+    constant integer FREE_MORTAR            = 'h01Q'
+    constant integer RAW_MATERIALS          = 'h00Z'
+    constant integer AMERICAN_TANK_SQUADRON = 'h02U'
+    constant integer BRITISH_TANK_SQUADRON  = 'h02T'
+    constant integer HOWITZER_SQUADRON      = 'h02S'
+    constant integer SENUSSI_REGIMENT       = 'h039'
+    
+    //Special
+    constant integer FERRY_POINT            = 'h02J'
+    
+    //Fake Upgrade Units
+    constant integer FRENCH_PARIS           = 'h01W'
+    constant integer GREECE_ACTIVE          = 'h02W'
+    constant integer SHIPPING_TO_GREECE     = 'h02V'
+    constant integer TRADE_DOCKS_ACTIVE     = 'h02X'
+    constant integer TURKISH_SCUTARI        = 'h038'
+    
+    //Upgrades
+    constant integer R_GAS                  = 'R004'
+    constant integer R_FIAT                 = 'R00B'
+    constant integer R_FORTIFIED_TRENCH     = 'R003'
+    constant integer R_HEAVY_ARTILLERY      = 'R00C'
+    constant integer R_ARTILLERY_ATTACK     = 'R008'
+    constant integer R_ARTILLERY_DEFENCE    = 'R007'
+    constant integer R_INFANTRY_ATTACK      = 'R005'
+    constant integer R_INFANTRY_DEFENCE     = 'R006'
+    constant integer R_JULY_1917            = 'R001'
+    constant integer R_JUNE_1917            = 'R00D'
+    constant integer R_NOVEMBER_1915        = 'R00E'
+    constant integer R_NOVEMBER_1918        = 'R00A'
+    constant integer R_OCTOBER_1917         = 'R000'
+    constant integer R_SEPTEMBER_1916       = 'R002'
+    constant integer R_SONAR                = 'R009'
+    
+    //Cities
+    
+    constant integer TOWN                   = 'h00Q'
+    constant integer CITY                   = 'h00P'
+    
+    constant integer AALBORG                = 'h01Z'
+    constant integer ALGIERS                = 'h00K'
+    constant integer AMSTERDAM              = 'h020'
+    constant integer ATHENS                 = 'h00M'
+    constant integer BEIRUT                 = 'h025'
+    constant integer BELGRADE               = 'h00D'
+    constant integer BENGHAZI               = 'h00T'
+    constant integer BERLIN                 = 'h001'
+    constant integer BRUSSELS               = 'h00R'
+    constant integer BUCHAREST              = 'h00G'
+    constant integer BUDAPEST               = 'h007'
+    constant integer CONSTANTINOPLE         = 'h00L'
+    constant integer COPENHAGEN             = 'h02K'
+    constant integer DAMASCUS               = 'h02Q'
+    constant integer DUBLIN                 = 'h00I'
+    constant integer DURRES                 = 'h037'
+    constant integer GLASGOW                = 'h02O'
+    constant integer HALIFAX                = 'h016'
+    constant integer HAMBURG                = 'h02P'
+    constant integer HELSINKI               = 'h01H'
+    constant integer KIEV                   = 'h00C'
+    constant integer LISBON                 = 'h00O'
+    constant integer LONDON                 = 'h002'
+    constant integer MARSEILLE              = 'h00J'
+    constant integer MOSCOW                 = 'h00B'
+    constant integer MUNICH                 = 'h004'
+    constant integer PARIS                  = 'h003'
+    constant integer PORT_SAID              = 'h00H'
+    constant integer PRAGUE                 = 'h005'
+    constant integer REYKJAVIK              = 'h02L'
+    constant integer RABAT                  = 'h02H'
+    constant integer RIGA                   = 'h021'
+    constant integer ROME                   = 'h00E'
+    constant integer SARAJEVO               = 'h009'
+    constant integer SCUTARI                = 'h026'
+    constant integer SEVASTOPOL             = 'h022'
+    constant integer SOFIA                  = 'h00F'
+    constant integer ST_PETERSBURG          = 'h00A'
+    constant integer STRASBOURG             = 'h00S'
+    constant integer SYRACUSE               = 'h02M'
+    constant integer THESSALONIKI           = 'h02N'
+    constant integer TOULOUSE               = 'h03A'
+    constant integer TRIPOLI                = 'h023'
+    constant integer TUNIS                  = 'h024'
+    constant integer VIENNA                 = 'h006'
+    constant integer WARSAW                 = 'h008'
+    constant integer WASHINGTON             = 'h00N'
+endglobals
+
+public function Initialize takes nothing returns nothing
+    set INFANTRY[RUSSIA_ID]                 = 'h010'
+    set INFANTRY[FRANCE_ID]                 = 'h012'
+    set INFANTRY[GREAT_BRITAIN_ID]          = 'h018'
+    set INFANTRY[ITALY_ID]                  = 'h013'
+    set INFANTRY[SERBIA_ID]                 = 'h015'
+    set INFANTRY[COMMONWEALTH_ID]           = 'h018'
+    set INFANTRY[OTTOMAN_EMPIRE_ID]         = 'h017'
+    set INFANTRY[BULGARIA_ID]               = 'h015'
+    set INFANTRY[AUSTRIA_ID]                = 'h014'
+    set INFANTRY[HUNGARY_ID]                = 'h014'
+    set INFANTRY[EAST_GERMANY_ID]           = 'h000'
+    set INFANTRY[WEST_GERMANY_ID]           = 'h000'
+    set TRENCH[RUSSIA_ID]                   = 'o004'
+    set TRENCH[FRANCE_ID]                   = 'o001'
+    set TRENCH[GREAT_BRITAIN_ID]            = 'o007'
+    set TRENCH[ITALY_ID]                    = 'o003'
+    set TRENCH[SERBIA_ID]                   = 'o005'
+    set TRENCH[COMMONWEALTH_ID]             = 'o007'
+    set TRENCH[OTTOMAN_EMPIRE_ID]           = 'o006'
+    set TRENCH[BULGARIA_ID]                 = 'o005'
+    set TRENCH[AUSTRIA_ID]                  = 'o002'
+    set TRENCH[HUNGARY_ID]                  = 'o002'
+    set TRENCH[EAST_GERMANY_ID]             = 'o000'
+    set TRENCH[WEST_GERMANY_ID]             = 'o000'
+    set FORTIFIED_TRENCH[RUSSIA_ID]         = 'o00F'
+    set FORTIFIED_TRENCH[FRANCE_ID]         = 'o00C'
+    set FORTIFIED_TRENCH[GREAT_BRITAIN_ID]  = 'o00B'
+    set FORTIFIED_TRENCH[ITALY_ID]          = 'o00D'
+    set FORTIFIED_TRENCH[SERBIA_ID]         = 'o00A'
+    set FORTIFIED_TRENCH[COMMONWEALTH_ID]   = 'o00B'
+    set FORTIFIED_TRENCH[OTTOMAN_EMPIRE_ID] = 'o00E'
+    set FORTIFIED_TRENCH[BULGARIA_ID]       = 'o00A'
+    set FORTIFIED_TRENCH[AUSTRIA_ID]        = 'o009'
+    set FORTIFIED_TRENCH[HUNGARY_ID]        = 'o009'
+    set FORTIFIED_TRENCH[EAST_GERMANY_ID]   = 'o008'
+    set FORTIFIED_TRENCH[WEST_GERMANY_ID]   = 'o008'
+    set ARMOURED_CAR[RUSSIA_ID]             = 'h01P'
+    set ARMOURED_CAR[FRANCE_ID]             = 'h01L'
+    set ARMOURED_CAR[GREAT_BRITAIN_ID]      = 'h01K'
+    set ARMOURED_CAR[ITALY_ID]              = 'h01N'
+    set ARMOURED_CAR[SERBIA_ID]             = 'h011'
+    set ARMOURED_CAR[COMMONWEALTH_ID]       = 'h01K'
+    set ARMOURED_CAR[OTTOMAN_EMPIRE_ID]     = 'h01O'
+    set ARMOURED_CAR[BULGARIA_ID]           = 'h011'
+    set ARMOURED_CAR[AUSTRIA_ID]            = 'h01J'
+    set ARMOURED_CAR[HUNGARY_ID]            = 'h01J'
+    set ARMOURED_CAR[EAST_GERMANY_ID]       = 'h01M'
+    set ARMOURED_CAR[WEST_GERMANY_ID]       = 'h01M'
+endfunction
+endlibrary
